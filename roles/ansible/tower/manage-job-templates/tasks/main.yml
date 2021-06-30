@@ -83,7 +83,7 @@
     with_items:
     - "{{ existing_job_templates_output.rest_output | get_remaining_items(processed_job_templates, 'name', 'name')}}"
     when:
-    - delete_missing_items|default(True) == True
+    - delete_missing_items|default(False) == True
 
   when:
   - ansible_tower.job_templates is defined
